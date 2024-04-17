@@ -27,7 +27,7 @@ pub fn build(b: *std.Build) void {
         },
         .flags = &.{"-std=c89"},
     });
-    lib.installHeader("zconf.h", "zconf.h");
-    lib.installHeader("zlib.h", "zlib.h");
+    lib.installHeader(.{ .path = "zconf.h" }, "zconf.h");
+    lib.installHeader(.{ .path = "zlib.h" }, "zlib.h");
     b.installArtifact(lib);
 }
